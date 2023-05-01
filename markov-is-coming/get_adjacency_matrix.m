@@ -10,8 +10,8 @@ function adjacency_matrix = get_adjacency_matrix(labyrinth)
     adjacency_matrix(loseCol, loseCol) = 1;
     for row = 1:labRows
       for col = 1:labCols
-        state = (row - 1) * labCols + col
-        bits = bitget(labyrinth(row, col), lookupBits)
+        state = (row - 1) * labCols + col;
+        bits = bitget(labyrinth(row, col), lookupBits);
         if bits(4) == 0 % west
             if col == 1 % lose state to the left
                 adjacency_matrix(state, loseCol) = 1;

@@ -10,8 +10,8 @@ function [J, grad] = cost_function(params, X, y, lambda, input_layer_size, hidde
     a2 = [ones(1, columns(z2)); sigmoid(z2)];
     a3 = sigmoid(theta2 * a2);
 
-    regression_param = sum(sum(theta1(:, 2 : end) .^ 2, 1)) + sum(sum(theta2(:, 2 : end) .^ 2, 1));
-    regression_param = (1 / (2 * m)) * regression_param * lambda;
+    regression_param = sum(sumsq(theta1(:, 2 : end))) + sum(sumsq(theta2(:, 2 : end)));
+    regression_param = lambda * (1 / (2 * m)) * regression_param;
 
     cross_entropy = sum(sum((-Yexpanded)' .* log(a3) - (1 - Yexpanded)' .* log(1 - a3), 1));
     cross_entropy = cross_entropy / m;
