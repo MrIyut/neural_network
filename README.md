@@ -1,6 +1,6 @@
 # Markov is coming
 
-`parse_labyrinth` -- loads into memory a labyrinth of size NxM from file
+`parse_labyrinth` -- loads into memory a labyrinth of size NxM from file \n
 `get_adjacency_matrix` -- creates a matrix that stores the possible directions from a certain state in the labyrinth
 `get_link_matrix` -- creates a matrix that stores the chances to move into a state from another one
 `get_Jacobi_parameters` -- splits the link matrix into components to be able to perform the Jacobi algorithm
